@@ -29,7 +29,7 @@ defaults:
 
 jobs:
   reusable-workflow-job:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     # Map the job output(s) to step output(s)
     outputs:
       job_output: ${{ steps.process-step.outputs.step_output }}
