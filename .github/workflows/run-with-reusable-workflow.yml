@@ -8,21 +8,21 @@ defaults:
     shell: bash
 
 jobs:
-  job-1:
-    runs-on: self-hosted
-    steps:
-      - name: Print Hello World
-        run: echo "Hello World"
-      - name: Create a file
-        run: echo "Hello World" > input.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: input_file
-          path: input.txt
+  # job-1:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print Hello World
+  #       run: echo "Hello World"
+  #     - name: Create a file
+  #       run: echo "Hello World" > input.txt
+  #     - uses: actions/upload-artifact@v4
+  #       with:
+  #         name: input_file
+  #         path: input.txt
 
   job-2:
-    needs: job-1
-    uses: ./.github/workflows/reusable-workflow.yml # We do not need to check out the repository to use the reusable workflow
+    # needs: job-1
+    uses: https://gist.githubusercontent.com/samsul-dot/bb320ac149ddc5eaef13b8f5f9924177/raw/4f3a74c0e1a8da3be8c570d6630f76fea40cc391/workflow-job-template.yml # We do not need to check out the repository to use the reusable workflow
     with:
       reusable_input: "job-2-input"
       filename: "input.txt"
