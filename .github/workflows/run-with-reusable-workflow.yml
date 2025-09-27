@@ -22,7 +22,7 @@ jobs:
 
   job-2:
     # needs: job-1
-    uses: samsul-dot/workflow-template/template-1/build-template.yml # We do not need to check out the repository to use the reusable workflow
+    uses: git@github.com:samsul-dot/workflow-template/template-1/build-template.yml # We do not need to check out the repository to use the reusable workflow
     with:
       reusable_input: "job-2-input"
       filename: "input.txt"
